@@ -1,0 +1,731 @@
+﻿{
+  "$schema": "./cv-schema.json",
+  "cv": {
+    "en": {
+      "meta": {
+        "lastUpdated": "2026",
+        "version": "2.0",
+        "branding": "Generated with folio-cv"
+      },
+      "ui": {
+        "langLabel": "Language",
+        "tagProfile": "// profile",
+        "tagCareer": "// career & education",
+        "tagStack": "// key stack used in production",
+        "timelineNow": "NOW",
+        "timelinePast": "PAST",
+        "available": "AVAILABLE",
+        "stackNote": "Representative technologies delivered in production",
+        "updatedPrefix": "Updated",
+        "btnTheme": "☀ Light Mode",
+        "btnPrint": "⎙ Export PDF",
+        "fWorkExp": "Work Experience",
+        "fEducation": "Education",
+        "fLanguages": "Languages",
+        "fCertifications": "Certifications",
+        "fTechSkills": "Technical Skills"
+      },
+      "personal": {
+        "name": "Jesús de Luis",
+        "title": "SRE Platform Engineer",
+        "photo": "assets/images/photo.jpg",
+        "location": "Madrid, Spain",
+        "contact": {
+          "phone": "+34 650366637",
+          "email": "jdeluisserrano@gmail.com",
+          "linkedin": "www.linkedin.com/in/jesusdeluis",
+          "linkedinUrl": "https://www.linkedin.com/in/jesusdeluis"
+        },
+        "summary": "SRE & Platform Engineer with 10+ years of experience building robust CI/CD pipelines and cloud infrastructure automation across enterprise environments. Specialised in CI/CD (Azure Pipelines and GitHub Actions), Infrastructure as Code (Terraform, Tofu), Azure cloud, and Docker orchestration. Strong advocate of evangelization and continuous learning, driving adoption of best practices, mentoring teams, and fostering a culture of collaboration across development and operations through automation, scripting, and security-first engineering.",
+        "summaryImpact": "Transformed platform reliability by moving from a single production environment to a robust multi-environment strategy (up to 9 environments, including 6 pre-production), significantly reducing the likelihood of critical production incidents. Empowered developers with production-like local testing via devcontainers and Docker, increasing delivery speed and confidence. Additionally, implemented ephemeral environments that are automatically created and destroyed, enabling scalable, cost-efficient, and faster validation in pre-production stages.",
+        "summaryImpactEnabled": true
+      },
+      "experience": [
+        {
+          "id": "basf",
+          "period": "2022–present",
+          "company": "BASF",
+          "role": "SRE | Platform Engineer",
+          "description": "Automation of Infrastructure as Code (IaC), CI/CD pipelines, and cloud platform engineering",
+          "type": "work",
+          "highlight": true,
+          "enabled": true
+        },
+        {
+          "id": "visma",
+          "period": "2019–2022",
+          "company": "Visma",
+          "role": "SRE | DevOps Engineer",
+          "description": "Design and implementation of CI/CD pipelines, IaC automation, and scripting to streamline delivery processes and enhance platform reliability",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "carrefour",
+          "period": "2018–2019",
+          "company": "Carrefour Innovation Center",
+          "role": "Developer",
+          "description": "Delivered integration and e‑commerce solutions to enhance platform connectivity and digital commerce capabilities",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "indra",
+          "period": "2016–2018",
+          "company": "Minsait by Indra",
+          "role": "Architecture & Presale",
+          "description": "Led Integration, IoT, and Big Data initiatives, contributing to both solution delivery and presales activities",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "erasmus",
+          "period": "2012–2013",
+          "company": "Chalmers University",
+          "role": "Erasmus Exchange",
+          "description": "Göteborg, Sweden",
+          "type": "education",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "magic",
+          "period": "2007–present",
+          "company": "Independent",
+          "role": "Magic Teacher & Shows",
+          "description": "Performance, teaching and event magic shows",
+          "type": "other",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "uc3m",
+          "period": "2006–2015",
+          "company": "Universidad Carlos III de Madrid",
+          "role": "Telecommunication Engineering",
+          "description": "Degree in Networks and Systems",
+          "type": "education",
+          "highlight": false,
+          "enabled": true
+        }
+      ],
+      "skills": {
+        "levels": {
+          "1": "Familiar",
+          "2": "Expert",
+          "3": "Core"
+        },
+        "categories": [
+          {
+            "name": "Cloud & IaC",
+            "color": "#e05252",
+            "skills": [
+              {
+                "name": "Terraform",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Azure",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Docker",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Az",
+                "level": 2,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "DevSecOps",
+            "color": "#3ecf6a",
+            "skills": [
+              {
+                "name": "Azure Pipelines",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "GitHub Actions",
+                "level": 3,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "Monitoring",
+            "color": "#5588e0",
+            "skills": [
+              {
+                "name": "Datadog",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "API Integration",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Prometheus",
+                "level": 1,
+                "enabled": true
+              },
+              {
+                "name": "Grafana",
+                "level": 1,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "Development",
+            "color": "#e8c840",
+            "skills": [
+              {
+                "name": "PowerShell",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Bash",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Python",
+                "level": 2,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "formal": {
+        "address": "Calle San Juán de Ortega 10B, 3ºA · 28050 Madrid, Spain",
+        "dob": "6 August 1988 · Madrid, Spain",
+        "workExperience": [
+          {
+            "id": "basf",
+            "period": "2022–present",
+            "company": "BASF",
+            "location": "Madrid",
+            "role": "Senior DevOps / SRE Engineer",
+            "description": "Transformed platform architecture by implementing a governed 9-environment model and migrating 95% of data ingestions to Databricks. Boosted developer autonomy (90%) through Docker-based local workflows and strengthened security with Fortify/SonarQube integration in CI/CD. Leading the strategic migration to GitHub Enterprise.",
+            "stack": "Databricks · Docker · Fortify · Terraform · Azure · GitHub Actions · Datadog · Azure DevOps · CI/CD",
+            "enabled": true
+          },
+          {
+            "id": "visma",
+            "period": "2019–2022",
+            "company": "Visma",
+            "location": "Remote / Madrid",
+            "role": "Senior DevOps Engineer",
+            "description": "Designed and delivered “Project Odin” infrastructure with automated ephemeral environments, eliminating testing bottlenecks and accelerating validation cycles. Implemented CI/CD and monitoring standards on Azure, ensuring full environment parity and enabling dynamic, self-service stacks.",
+            "stack": "Ephemeral Environments · IaC · Azure · PowerShell · CI/CD · SAFe",
+            "enabled": true
+          },
+          {
+            "id": "carrefour",
+            "period": "2018–2019",
+            "company": "Carrefour R&D",
+            "location": "Madrid",
+            "role": "E-commerce Developer",
+            "description": "Modernised a legacy monolithic e-commerce platform by designing and developing backend services using cloud-native technologies, including OpenShift (Docker/pods) and Jenkins, improving scalability and deployment efficiency.",
+            "stack": "ATG · Spring Boot · Handlebars · OpenShift · Jenkins · Kafka",
+            "enabled": true
+          },
+          {
+            "id": "indra",
+            "period": "2016–2018",
+            "company": "Minsait by Indra",
+            "location": "Madrid",
+            "role": "Backend Architect / Developer",
+            "description": "Supported platform architecture and delivered RESTful backend services (Spring Boot, JPA, MongoDB/SQL), while managing Linux/Azure infrastructure and contributing to technical presales engagements.",
+            "stack": "Spring Boot · JPA · MongoDB · SQL · REST · Linux · Azure",
+            "enabled": true
+          },
+          {
+            "id": "ibm",
+            "period": "2015–2016",
+            "company": "IBM Smarter Analytics",
+            "location": "Madrid",
+            "role": "Intern Software Developer",
+            "description": "Delivered web application solutions for Smart Cities initiatives (TORO Project, Vodafone Connected City) on the IOC platform using Z-Systems, supporting digital city infrastructure and connected services.",
+            "stack": "Java · JavaScript · HTML · REST · DB2 · IBM Broker · Z-Systems",
+            "enabled": true
+          },
+          {
+            "id": "bbva",
+            "period": "2014–2015",
+            "company": "BBVA",
+            "location": "Madrid",
+            "role": "Intern Analyst",
+            "description": "Integrated Markit EDM into BBVA Asset Management to support Data Quality Management (DQM) and regulatory reporting aligned with AIFMD requirements.",
+            "stack": "Scrum · Markit EDM · Data Quality Management · AIFMD",
+            "enabled": true
+          }
+        ],
+        "education": [
+          {
+            "id": "uc3m",
+            "period": "2006–2015",
+            "institution": "Universidad Carlos III de Madrid",
+            "location": "Madrid",
+            "degree": "Telecommunication Engineering",
+            "detail": "Networks and Systems specialisation. Merit Award in project management. Final project: idibidi — Android app supporting non-verbal patient communication.",
+            "enabled": true
+          },
+          {
+            "id": "erasmus",
+            "period": "2012–2013",
+            "institution": "Chalmers University of Technology",
+            "location": "Göteborg, Sweden",
+            "degree": "Erasmus Exchange",
+            "detail": "Engineering exchange programme, full academic year.",
+            "enabled": true
+          },
+          {
+            "id": "citius",
+            "period": "2015–2016",
+            "institution": "Universidad Autónoma de Madrid",
+            "location": "Madrid",
+            "degree": "CITIUS Internship",
+            "detail": "Master's level economics courses.",
+            "enabled": true
+          }
+        ],
+        "languages": [
+          {
+            "language": "Spanish",
+            "level": "Native"
+          },
+          {
+            "language": "English",
+            "level": "C1",
+            "detail": "B2 certificate · 1 year at Chalmers, Göteborg"
+          },
+          {
+            "language": "French",
+            "level": "Elementary",
+            "detail": "4 years secondary school"
+          }
+        ],
+        "certifications": [
+          {
+            "name": "Lean IT Foundation",
+            "issuer": "APMG International",
+            "year": "2018",
+            "detail": "Value delivery through Lean manufacturing and services principles."
+          }
+        ],
+        "skills": [
+          {
+            "category": "Cloud",
+            "items": "Azure · Oracle Cloud"
+          },
+          {
+            "category": "IaC & CI/CD",
+            "items": "Terraform · GitHub Actions · Azure Pipelines"
+          },
+          {
+            "category": "Containers",
+            "items": "Docker · OpenShift"
+          },
+          {
+            "category": "Monitoring",
+            "items": "Datadog · Uptime Kuma"
+          },
+          {
+            "category": "Security",
+            "items": "Fortify · SonarQube · OWASP"
+          },
+          {
+            "category": "Dev",
+            "items": "Python · Bash · PowerShell · Terraform"
+          },
+          {
+            "category": "Methods",
+            "items": "Scrum · SAFe · Kanban · Lean IT"
+          }
+        ]
+      }
+    },
+    "es": {
+      "meta": {
+        "lastUpdated": "2026",
+        "version": "2.0",
+        "branding": "Generated with folio-cv by Jesús de Luis"
+      },
+      "ui": {
+        "langLabel": "Idioma",
+        "tagProfile": "// perfil",
+        "tagCareer": "// carrera & educación",
+        "tagStack": "// tecnologías usadas en producción",
+        "timelineNow": "HOY",
+        "timelinePast": "ANTES",
+        "available": "DISPONIBLE",
+        "stackNote": "Tecnologías representativas usadas en producción",
+        "updatedPrefix": "Actualizado",
+        "btnTheme": "☀ Modo Claro",
+        "btnPrint": "⎙ Exportar PDF",
+        "fWorkExp": "Experiencia Laboral",
+        "fEducation": "Educación",
+        "fLanguages": "Idiomas",
+        "fCertifications": "Certificaciones",
+        "fTechSkills": "Competencias Técnicas"
+      },
+      "personal": {
+        "name": "Jesús de Luis",
+        "title": "Ingeniero de Plataforma SRE",
+        "photo": "assets/images/photo.jpg",
+        "location": "Madrid, España",
+        "contact": {
+          "phone": "+34 650366637",
+          "email": "jdeluisserrano@gmail.com",
+          "linkedin": "www.linkedin.com/in/jesusdeluis",
+          "linkedinUrl": "https://www.linkedin.com/in/jesusdeluis"
+        },
+        "summary": "Ingeniero SRE y de Plataforma con más de 10 años de experiencia construyendo pipelines de CI/CD robustos y automatización de infraestructura cloud en entornos empresariales. Especializado en CI/CD (Azure Pipelines y GitHub Actions), Infraestructura como Código (Terraform, Tofu), cloud en Azure y orquestación con Docker. Firme defensor de la evangelización técnica y del aprendizaje continuo, impulsando la adopción de buenas prácticas, mentorizando equipos y fomentando una cultura de colaboración entre desarrollo y operaciones mediante automatización, scripting e ingeniería con enfoque en seguridad.",
+        "summaryImpact": "Transformé la fiabilidad de plataforma al pasar de un único entorno de producción a una estrategia robusta multi-entorno (hasta 9 entornos, incluidos 6 de preproducción), reduciendo de forma significativa la probabilidad de incidencias críticas en producción. Potencié la autonomía de desarrollo con pruebas locales similares a producción mediante devcontainers y Docker, aumentando la velocidad y la confianza en la entrega. Además, implementé entornos efímeros que se crean y destruyen automáticamente, habilitando validaciones más escalables, rápidas y eficientes en coste en fases de preproducción.",
+        "summaryImpactEnabled": true
+      },
+      "experience": [
+        {
+          "id": "basf",
+          "period": "2022–actualidad",
+          "company": "BASF",
+          "role": "SRE | Ingeniero de Plataforma",
+          "description": "Automatización de Infraestructura como Código (IaC), pipelines de CI/CD e ingeniería de plataforma cloud",
+          "type": "work",
+          "highlight": true,
+          "enabled": true
+        },
+        {
+          "id": "visma",
+          "period": "2019–2022",
+          "company": "Visma",
+          "role": "SRE | Ingeniero DevOps",
+          "description": "Diseño e implementación de pipelines de CI/CD, automatización IaC y scripting para agilizar procesos de entrega y mejorar la fiabilidad de la plataforma",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "carrefour",
+          "period": "2018–2019",
+          "company": "Carrefour Innovation Center",
+          "role": "Desarrollador",
+          "description": "Entrega de soluciones de integración y e-commerce para mejorar la conectividad de la plataforma y las capacidades de comercio digital",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "indra",
+          "period": "2016–2018",
+          "company": "Minsait by Indra",
+          "role": "Arquitectura y Preventa",
+          "description": "Liderazgo de iniciativas de Integración, IoT y Big Data, contribuyendo tanto a la entrega de soluciones como a actividades de preventa",
+          "type": "work",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "erasmus",
+          "period": "2012–2013",
+          "company": "Chalmers University",
+          "role": "Intercambio Erasmus",
+          "description": "Gotemburgo, Suecia",
+          "type": "education",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "magic",
+          "period": "2007–actualidad",
+          "company": "Independiente",
+          "role": "Profesor de Magia y Espectáculos",
+          "description": "Actuación, docencia y espectáculos de magia para eventos",
+          "type": "other",
+          "highlight": false,
+          "enabled": true
+        },
+        {
+          "id": "uc3m",
+          "period": "2006–2015",
+          "company": "Universidad Carlos III de Madrid",
+          "role": "Ingeniería de Telecomunicación",
+          "description": "Especialidad en Redes y Sistemas",
+          "type": "education",
+          "highlight": false,
+          "enabled": true
+        }
+      ],
+      "skills": {
+        "levels": {
+          "1": "Conocimiento",
+          "2": "Experto",
+          "3": "Principal"
+        },
+        "categories": [
+          {
+            "name": "Cloud e IaC",
+            "color": "#e05252",
+            "skills": [
+              {
+                "name": "Terraform",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Azure",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Docker",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Az",
+                "level": 2,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "DevSecOps",
+            "color": "#3ecf6a",
+            "skills": [
+              {
+                "name": "Azure Pipelines",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "GitHub Actions",
+                "level": 3,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "Monitorización",
+            "color": "#5588e0",
+            "skills": [
+              {
+                "name": "Datadog",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Integración API",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Prometheus",
+                "level": 1,
+                "enabled": true
+              },
+              {
+                "name": "Grafana",
+                "level": 1,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          },
+          {
+            "name": "Desarrollo",
+            "color": "#e8c840",
+            "skills": [
+              {
+                "name": "PowerShell",
+                "level": 2,
+                "enabled": true
+              },
+              {
+                "name": "Bash",
+                "level": 3,
+                "enabled": true
+              },
+              {
+                "name": "Python",
+                "level": 2,
+                "enabled": true
+              }
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "formal": {
+        "address": "Calle San Juán de Ortega 10B, 3ºA · 28050 Madrid, España",
+        "dob": "6 de agosto de 1988 · Madrid, España",
+        "workExperience": [
+          {
+            "id": "basf",
+            "period": "2022–actualidad",
+            "company": "BASF",
+            "location": "Madrid",
+            "role": "Ingeniero Senior DevOps / SRE",
+            "description": "Transformé la arquitectura de plataforma implantando un modelo gobernado de 9 entornos y migrando el 95% de las ingestas de datos a Databricks. Impulsé la autonomía del equipo de desarrollo (90%) mediante flujos locales basados en Docker y reforcé la seguridad con integración de Fortify/SonarQube en CI/CD. Liderando la migración estratégica a GitHub Enterprise.",
+            "stack": "Databricks · Docker · Fortify · Terraform · Azure · GitHub Actions · Datadog · Azure DevOps · CI/CD",
+            "enabled": true
+          },
+          {
+            "id": "visma",
+            "period": "2019–2022",
+            "company": "Visma",
+            "location": "Remoto / Madrid",
+            "role": "Ingeniero Senior DevOps",
+            "description": "Diseñé y entregué la infraestructura de “Project Odin” con entornos efímeros automatizados, eliminando cuellos de botella en testing y acelerando ciclos de validación. Implementé estándares de CI/CD y monitorización en Azure, garantizando paridad total entre entornos y habilitando stacks dinámicos de autoservicio.",
+            "stack": "Ephemeral Environments · IaC · Azure · PowerShell · CI/CD · SAFe",
+            "enabled": true
+          },
+          {
+            "id": "carrefour",
+            "period": "2018–2019",
+            "company": "Carrefour R&D",
+            "location": "Madrid",
+            "role": "Desarrollador E-commerce",
+            "description": "Modernicé una plataforma monolítica legacy de e-commerce diseñando y desarrollando servicios backend con tecnologías cloud-native, incluyendo OpenShift (Docker/pods) y Jenkins, mejorando escalabilidad y eficiencia de despliegue.",
+            "stack": "ATG · Spring Boot · Handlebars · OpenShift · Jenkins · Kafka",
+            "enabled": true
+          },
+          {
+            "id": "indra",
+            "period": "2016–2018",
+            "company": "Minsait by Indra",
+            "location": "Madrid",
+            "role": "Arquitecto / Desarrollador Backend",
+            "description": "Di soporte a la arquitectura de plataforma y entregué servicios backend RESTful (Spring Boot, JPA, MongoDB/SQL), además de gestionar infraestructura Linux/Azure y contribuir en actividades de preventa técnica.",
+            "stack": "Spring Boot · JPA · MongoDB · SQL · REST · Linux · Azure",
+            "enabled": true
+          },
+          {
+            "id": "ibm",
+            "period": "2015–2016",
+            "company": "IBM Smarter Analytics",
+            "location": "Madrid",
+            "role": "Desarrollador de Software en Prácticas",
+            "description": "Entregué soluciones web para iniciativas de Smart Cities (Proyecto TORO, Vodafone Connected City) en la plataforma IOC usando Z-Systems, dando soporte a infraestructura urbana digital y servicios conectados.",
+            "stack": "Java · JavaScript · HTML · REST · DB2 · IBM Broker · Z-Systems",
+            "enabled": true
+          },
+          {
+            "id": "bbva",
+            "period": "2014–2015",
+            "company": "BBVA",
+            "location": "Madrid",
+            "role": "Analista en Prácticas",
+            "description": "Integré Markit EDM en BBVA Asset Management para dar soporte a Data Quality Management (DQM) y reporting regulatorio alineado con requisitos AIFMD.",
+            "stack": "Scrum · Markit EDM · Data Quality Management · AIFMD",
+            "enabled": true
+          }
+        ],
+        "education": [
+          {
+            "id": "uc3m",
+            "period": "2006–2015",
+            "institution": "Universidad Carlos III de Madrid",
+            "location": "Madrid",
+            "degree": "Ingeniería de Telecomunicación",
+            "detail": "Especialidad en Redes y Sistemas. Premio de Mérito en gestión de proyectos. Proyecto final: idibidi — app Android para facilitar la comunicación de pacientes no verbales.",
+            "enabled": true
+          },
+          {
+            "id": "erasmus",
+            "period": "2012–2013",
+            "institution": "Chalmers University of Technology",
+            "location": "Gotemburgo, Suecia",
+            "degree": "Intercambio Erasmus",
+            "detail": "Programa de intercambio en ingeniería durante un curso académico completo.",
+            "enabled": true
+          },
+          {
+            "id": "citius",
+            "period": "2015–2016",
+            "institution": "Universidad Autónoma de Madrid",
+            "location": "Madrid",
+            "degree": "Prácticas CITIUS",
+            "detail": "Asignaturas de economía de nivel máster.",
+            "enabled": true
+          }
+        ],
+        "languages": [
+          {
+            "language": "Español",
+            "level": "Nativo"
+          },
+          {
+            "language": "Inglés",
+            "level": "C1",
+            "detail": "Certificado B2 · 1 año en Chalmers, Gotemburgo"
+          },
+          {
+            "language": "Francés",
+            "level": "Básico",
+            "detail": "4 años en educación secundaria"
+          }
+        ],
+        "certifications": [
+          {
+            "name": "Lean IT Foundation",
+            "issuer": "APMG International",
+            "year": "2018",
+            "detail": "Entrega de valor mediante principios Lean en fabricación y servicios."
+          }
+        ],
+        "skills": [
+          {
+            "category": "Nube",
+            "items": "Azure · Oracle Cloud"
+          },
+          {
+            "category": "IaC & CI/CD",
+            "items": "Terraform · GitHub Actions · Azure Pipelines"
+          },
+          {
+            "category": "Contenedores",
+            "items": "Docker · OpenShift"
+          },
+          {
+            "category": "Monitorización",
+            "items": "Datadog · Uptime Kuma"
+          },
+          {
+            "category": "Seguridad",
+            "items": "Fortify · SonarQube · OWASP"
+          },
+          {
+            "category": "Desarrollo",
+            "items": "Python · Bash · PowerShell · Terraform"
+          },
+          {
+            "category": "Métodos",
+            "items": "Scrum · SAFe · Kanban · Lean IT"
+          }
+        ]
+      }
+    }
+  }
+}

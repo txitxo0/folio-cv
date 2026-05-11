@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/folio-cv/cv-schema.json",
+  "title": "Folio CV Data Schema",
+  "description": "Schema for multilingual CV data consumed by the folio-cv renderer. The root object contains locale nodes under cv (for example en, es).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cv"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional schema URI/path used by editors for validation and autocomplete."
+    },
+    "cv": {
+      "type": "object",
+      "description": "Locale map keyed by language code (for example en, es, en-US). Each locale must implement the full CV contract.",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z]{2}(-[A-Z]{2})?$": {
+          "$ref": "#/$defs/localeCv"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "enabledFlag": {
+      "type": "boolean",
+      "description": "Visibility toggle. true shows the node, false hides it in rendering. If omitted, renderer treats it as visible.",
+      "default": true
+    },
+    "meta": {
+      "type": "object",
+      "description": "General metadata used by footer and build/version information.",
+      "additionalProperties": false,
+      "required": ["lastUpdated", "version", "branding"],
+      "properties": {
+        "lastUpdated": {
+          "type": "string",
+          "description": "Display value for last update label (for example year or date)."
+        },
+        "version": {
+          "type": "string",
+          "description": "Human-readable data version."
+        },
+        "branding": {
+          "type": "string",
+          "description": "Brand/footer text shown in the page footer."
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "description": "Locale-specific UI labels rendered in both visual and formal pages.",
+      "additionalProperties": false,
+      "required": [
+        "langLabel",
+        "tagProfile",
+        "tagCareer",
+        "tagStack",
+        "timelineNow",
+        "timelinePast",
+        "available",
+        "stackNote",
+        "updatedPrefix",
+        "btnTheme",
+        "btnPrint",
+        "fWorkExp",
+        "fEducation",
+        "fLanguages",
+        "fCertifications",
+        "fTechSkills"
+      ],
+      "properties": {
+        "langLabel": { "type": "string", "description": "Label used next to language selector." },
+        "tagProfile": { "type": "string", "description": "Section tag for profile block." },
+        "tagCareer": { "type": "string", "description": "Section tag for timeline block." },
+        "tagStack": { "type": "string", "description": "Section tag for skills/stack block." },
+        "timelineNow": { "type": "string", "description": "Timeline label for recent entries." },
+        "timelinePast": { "type": "string", "description": "Timeline label for older entries." },
+        "available": { "type": "string", "description": "Availability badge text in header." },
+        "stackNote": { "type": "string", "description": "Note rendered below stack/skills section." },
+        "updatedPrefix": { "type": "string", "description": "Prefix used for fallback footer updated text." },
+        "btnTheme": { "type": "string", "description": "Theme toggle button label." },
+        "btnPrint": { "type": "string", "description": "Print/export button label." },
+        "fWorkExp": { "type": "string", "description": "Formal page heading for work experience." },
+        "fEducation": { "type": "string", "description": "Formal page heading for education." },
+        "fLanguages": { "type": "string", "description": "Formal page heading for languages." },
+        "fCertifications": { "type": "string", "description": "Formal page heading for certifications." },
+        "fTechSkills": { "type": "string", "description": "Formal page heading for technical skills." }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "Contact information rendered in the page header(s).",
+      "additionalProperties": false,
+      "required": ["phone", "email", "linkedin", "linkedinUrl"],
+      "properties": {
+        "phone": { "type": "string", "description": "Phone number displayed and used as tel link." },
+        "email": { "type": "string", "description": "Email displayed and used as mailto link." },
+        "linkedin": { "type": "string", "description": "Short LinkedIn display text." },
+        "linkedinUrl": { "type": "string", "description": "Absolute LinkedIn URL.", "format": "uri" }
+      }
+    },
+    "personal": {
+      "type": "object",
+      "description": "Personal profile section content.",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "title",
+        "photo",
+        "location",
+        "contact",
+        "summary",
+        "summaryImpact"
+      ],
+      "properties": {
+        "name": { "type": "string", "description": "Full name." },
+        "title": { "type": "string", "description": "Professional headline." },
+        "photo": { "type": "string", "description": "Relative image path for avatar/photo." },
+        "location": { "type": "string", "description": "Location text in header." },
+        "contact": { "$ref": "#/$defs/contact" },
+        "summary": { "type": "string", "description": "Primary profile summary paragraph." },
+        "summaryImpact": { "type": "string", "description": "Impact paragraph appended to summary area." },
+        "summaryImpactEnabled": {
+          "$ref": "#/$defs/enabledFlag",
+          "description": "Visibility toggle for summaryImpact paragraph."
+        }
+      }
+    },
+    "experienceItem": {
+      "type": "object",
+      "description": "Timeline card entry shown on the visual page.",
+      "additionalProperties": false,
+      "required": ["id", "period", "company", "role", "description", "type", "highlight"],
+      "properties": {
+        "id": { "type": "string", "description": "Stable unique id for the entry." },
+        "period": { "type": "string", "description": "Date range label (for example 2022-present)." },
+        "company": { "type": "string", "description": "Company or institution name." },
+        "role": { "type": "string", "description": "Role or position title." },
+        "description": { "type": "string", "description": "Short supporting description." },
+        "type": {
+          "type": "string",
+          "description": "Visual type used for timeline styling.",
+          "enum": ["work", "education", "other"]
+        },
+        "highlight": { "type": "boolean", "description": "Marks featured timeline entry." },
+        "enabled": { "$ref": "#/$defs/enabledFlag" }
+      }
+    },
+    "skillNode": {
+      "type": "object",
+      "description": "Single skill with its level value used in bars/radar.",
+      "additionalProperties": false,
+      "required": ["name", "level"],
+      "properties": {
+        "name": { "type": "string", "description": "Skill label." },
+        "level": { "type": "integer", "minimum": 1, "description": "Skill level number." },
+        "enabled": { "$ref": "#/$defs/enabledFlag" }
+      }
+    },
+    "skillsCategory": {
+      "type": "object",
+      "description": "Skill category block containing multiple skill nodes.",
+      "additionalProperties": false,
+      "required": ["name", "color", "skills"],
+      "properties": {
+        "name": { "type": "string", "description": "Category title." },
+        "color": {
+          "type": "string",
+          "description": "Primary category color in hex format.",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "pastelColor": {
+          "type": "string",
+          "description": "Optional pastel override for radar fill/stroke.",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "skills": {
+          "type": "array",
+          "description": "Skills included in this category.",
+          "items": { "$ref": "#/$defs/skillNode" }
+        },
+        "enabled": { "$ref": "#/$defs/enabledFlag" }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "description": "Visual skills data for bars and radar chart.",
+      "additionalProperties": false,
+      "required": ["levels", "categories"],
+      "properties": {
+        "levels": {
+          "type": "object",
+          "description": "Map of numeric level keys to labels.",
+          "minProperties": 1,
+          "patternProperties": {
+            "^[1-9][0-9]*$": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "categories": {
+          "type": "array",
+          "description": "Category list used by visual skills section.",
+          "items": { "$ref": "#/$defs/skillsCategory" }
+        }
+      }
+    },
+    "formalWorkItem": {
+      "type": "object",
+      "description": "Work entry for formal page layout.",
+      "additionalProperties": false,
+      "required": ["id", "period", "company", "location", "role", "description", "stack"],
+      "properties": {
+        "id": { "type": "string", "description": "Stable unique id." },
+        "period": { "type": "string", "description": "Date range." },
+        "company": { "type": "string", "description": "Employer name." },
+        "location": { "type": "string", "description": "Location of the role." },
+        "role": { "type": "string", "description": "Role name." },
+        "description": { "type": "string", "description": "Role summary paragraph." },
+        "stack": { "type": "string", "description": "Technology stack text." },
+        "enabled": { "$ref": "#/$defs/enabledFlag" }
+      }
+    },
+    "formalEducationItem": {
+      "type": "object",
+      "description": "Education entry for formal page layout.",
+      "additionalProperties": false,
+      "required": ["id", "period", "institution", "location", "degree", "detail"],
+      "properties": {
+        "id": { "type": "string", "description": "Stable unique id." },
+        "period": { "type": "string", "description": "Date range." },
+        "institution": { "type": "string", "description": "Institution name." },
+        "location": { "type": "string", "description": "Location for the education item." },
+        "degree": { "type": "string", "description": "Degree or education title." },
+        "detail": { "type": "string", "description": "Supporting details for the education item." },
+        "enabled": { "$ref": "#/$defs/enabledFlag" }
+      }
+    },
+    "formalLanguageItem": {
+      "type": "object",
+      "description": "Language proficiency entry on formal page.",
+      "additionalProperties": false,
+      "required": ["language", "level"],
+      "properties": {
+        "language": { "type": "string", "description": "Language name." },
+        "level": { "type": "string", "description": "Language proficiency level." },
+        "detail": { "type": "string", "description": "Optional details (certificate, context, etc.)." }
+      }
+    },
+    "formalCertificationItem": {
+      "type": "object",
+      "description": "Certification entry on formal page.",
+      "additionalProperties": false,
+      "required": ["name", "issuer", "year", "detail"],
+      "properties": {
+        "name": { "type": "string", "description": "Certification title." },
+        "issuer": { "type": "string", "description": "Issuing organization." },
+        "year": { "type": "string", "description": "Issue/accreditation year." },
+        "detail": { "type": "string", "description": "Certification context/details." }
+      }
+    },
+    "formalSkillItem": {
+      "type": "object",
+      "description": "Technical skill category row in formal page.",
+      "additionalProperties": false,
+      "required": ["category", "items"],
+      "properties": {
+        "category": { "type": "string", "description": "Category label." },
+        "items": { "type": "string", "description": "Delimited list of skills/tools." }
+      }
+    },
+    "formal": {
+      "type": "object",
+      "description": "Second page formal CV content.",
+      "additionalProperties": false,
+      "required": [
+        "address",
+        "dob",
+        "workExperience",
+        "education",
+        "languages",
+        "certifications",
+        "skills"
+      ],
+      "properties": {
+        "address": { "type": "string", "description": "Postal address line for formal header." },
+        "dob": { "type": "string", "description": "Date of birth and location line." },
+        "workExperience": {
+          "type": "array",
+          "description": "Formal work experience entries.",
+          "items": { "$ref": "#/$defs/formalWorkItem" }
+        },
+        "education": {
+          "type": "array",
+          "description": "Formal education entries.",
+          "items": { "$ref": "#/$defs/formalEducationItem" }
+        },
+        "languages": {
+          "type": "array",
+          "description": "Formal languages entries.",
+          "items": { "$ref": "#/$defs/formalLanguageItem" }
+        },
+        "certifications": {
+          "type": "array",
+          "description": "Formal certifications entries.",
+          "items": { "$ref": "#/$defs/formalCertificationItem" }
+        },
+        "skills": {
+          "type": "array",
+          "description": "Formal technical skills entries.",
+          "items": { "$ref": "#/$defs/formalSkillItem" }
+        }
+      }
+    },
+    "localeCv": {
+      "type": "object",
+      "description": "All CV data for one locale.",
+      "additionalProperties": false,
+      "required": ["meta", "ui", "personal", "experience", "skills", "formal"],
+      "properties": {
+        "meta": { "$ref": "#/$defs/meta" },
+        "ui": { "$ref": "#/$defs/ui" },
+        "personal": { "$ref": "#/$defs/personal" },
+        "experience": {
+          "type": "array",
+          "description": "Timeline entries for visual page.",
+          "items": { "$ref": "#/$defs/experienceItem" }
+        },
+        "skills": { "$ref": "#/$defs/skills" },
+        "formal": { "$ref": "#/$defs/formal" }
+      }
+    }
+  }
+}
