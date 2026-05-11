@@ -101,6 +101,11 @@
     if (el && value) el.textContent = value;
   }
 
+  function setHtml(id, value) {
+    const el = document.getElementById(id);
+    if (el && value) el.innerHTML = value;
+  }
+
   function setAttr(id, attr, value) {
     const el = document.getElementById(id);
     if (el && value) el.setAttribute(attr, value);
@@ -239,8 +244,8 @@
     const year = (meta && meta.lastUpdated) || '';
     const prefix = (ui && ui.updatedPrefix) || 'Updated';
     const text = branding || (year ? prefix + ' ' + year : '');
-    setText('footer-updated', text);
-    setText('footer-formal-updated', text);
+    setHtml('footer-updated', text);
+    setHtml('footer-formal-updated', text);
   }
 
   function applyUi(ui) {

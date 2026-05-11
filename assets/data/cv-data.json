@@ -5,7 +5,7 @@
       "meta": {
         "lastUpdated": "2026",
         "version": "2.0",
-        "branding": "Generated with folio-cv"
+        "branding": "Generated with <a href=\"https://github.com/txitxo0/folio-cv/\">folio-cv</a>"
       },
       "ui": {
         "langLabel": "Language",
@@ -368,7 +368,7 @@
       "meta": {
         "lastUpdated": "2026",
         "version": "2.0",
-        "branding": "Generated with folio-cv by Jesús de Luis"
+        "branding": "Generated with <a href=\"https://github.com/txitxo0/folio-cv/\">folio-cv</a>"
       },
       "ui": {
         "langLabel": "Idioma",
