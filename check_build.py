@@ -13,13 +13,11 @@ print(f"  Size: {len(html):,} characters")
 checks = {
     "window.__cvData": "Data injection",
     '"cv":': "CV structure",
-    '"en":': "English locale",
-    '"es":': "Spanish locale",
     '"ui":': "UI translations",
     "function toggleTheme": "Theme toggle function",
     "function applyUi": "UI application function",
-    'class="btn-theme"': "Theme button",
-    'class="btn-print"': "Print button",
+    'id="btn-theme"': "Theme button",
+    'id="btn-print"': "Print button",
 }
 
 all_ok = True
@@ -37,10 +35,19 @@ try:
     json_str = html[start:end]
     data = json.loads(json_str)
     print("✓ JSON is valid")
-    print(f"  Locales: {list(data['cv'].keys())}")
-    for loc in data["cv"].keys():
-        if "ui" in data["cv"][loc]:
-            print(f"  ✓ {loc} has UI translations")
+    locale_map = data.get("cv") if isinstance(data, dict) else None
+    if not isinstance(locale_map, dict) or not locale_map:
+        print("✗ No locales found under 'cv'")
+        all_ok = False
+    else:
+        locales = list(locale_map.keys())
+        print(f"  Locales: {locales}")
+        for loc, payload in locale_map.items():
+            if isinstance(payload, dict) and "ui" in payload:
+                print(f"  ✓ {loc} has UI translations")
+            else:
+                print(f"  ✗ {loc} is missing UI translations")
+                all_ok = False
 except Exception as e:
     print(f"✗ JSON parsing failed: {e}")
     all_ok = False

@@ -8,7 +8,7 @@ A data-driven CV that feels like a product, not a static document.
   <img alt="folio-cv logo" src="assets/images/folio-cv-logo-alt-light.svg" width="640">
 </picture>
 
-This project renders a bilingual CV from JSON, then compiles everything into a single deploy-ready HTML file for GitHub Pages.
+This project renders a multilingual CV from JSON, then compiles everything into a single deploy-ready HTML file for GitHub Pages.
 
 ## Preview
 
@@ -37,7 +37,7 @@ The workflow variable `${{ steps.deployment.outputs.page_url }}` only exists at 
 Instead of maintaining CV text in multiple documents, the source of truth is one JSON contract:
 
 1. Easy to edit and version.
-2. Easy to localize (`en`, `es`, future locales).
+2. Easy to localize (any locale key such as `en`, `es`, `fr`, `pt-BR`, `de`, `it`, etc).
 3. Strictly validated through JSON Schema.
 4. Consistent output across local and CI builds.
 
@@ -126,12 +126,38 @@ The root is multilingual:
   "$schema": "./cv-schema.json",
   "cv": {
     "en": { "...": "locale data" },
-    "es": { "...": "locale data" }
+    "es": { "...": "locale data" },
+    "pt-BR": { "...": "locale data" }
   }
 }
 ```
 
-Locale keys support `xx` and `xx-YY` (for example `en`, `es`, `en-US`).
+Locale keys support BCP47-like tags (for example `en`, `es`, `pt-BR`, `zh-Hant`, `en-US`).
+
+## Locale-Agnostic Usage
+
+This project is locale-agnostic by design. It does not require specific locale names such as `en` or `es`.
+
+What this means in practice:
+
+1. Any valid locale key can be used under `cv` (`es`, `pt`, `pt-BR`, `de`, `it`, `ja`, etc.).
+2. `build.py` validates every locale entry against the same schema contract.
+3. `build.py` inlines local photos for all locales, not only the first one.
+4. Runtime locale selection in `assets/js/cv.js` is generic and works with any locale key found in the JSON.
+5. `<html lang>` is set at runtime from the active locale.
+
+Locale resolution order at runtime:
+
+1. `?lang=<locale>` query param (if present and valid).
+2. Saved locale from localStorage (`cv-locale`) if valid.
+3. First locale key in `cv` as fallback.
+
+To add a new locale safely:
+
+1. Add a new node under `cv`, for example `es` or `pt-BR`.
+2. Include all required sections (`meta`, `ui`, `personal`, `experience`, `skills`, `formal`).
+3. Run `python build.py` to validate schema and generate `dist/index.html`.
+4. Optional: run `python check_build.py` to confirm inlined output integrity.
 
 Each locale requires these sections:
 
