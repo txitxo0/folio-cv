@@ -172,6 +172,18 @@ body.light-mode .hname { color: #0f172a }
   align-items: flex-end; gap: .4rem;
   font-size: .57rem;
 }
+.repo-link {
+  margin-top: .8rem;
+  font-size: .75rem;
+  color: var(--txt2);
+}
+.repo-link a {
+  color: var(--acc);
+  text-decoration: none;
+}
+.repo-link a:hover {
+  color: var(--acc2);
+}
 .bavail {
   display: flex; align-items: center; gap: .35rem;
   color: var(--green);
@@ -665,19 +677,28 @@ body.light-mode .cat-block:nth-child(4) .bar-fill { background: #eacd88 !importa
 /* ═══════════════════════════════════════════════════════════
    BUTTONS (screen only)
 ═══════════════════════════════════════════════════════════ */
-#btn-print, #btn-theme {
+#btn-toolbar {
   position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  gap: .75rem;
+  z-index: 999;
+}
+#btn-toolbar button,
+#btn-print, #btn-theme, #btn-github {
   background: var(--acc); color: #fff;
   border: none; cursor: pointer;
   padding: .5rem 1rem;
   font-family: var(--fm); font-size: .62rem; letter-spacing: .1em;
-  text-transform: uppercase; z-index: 999;
+  text-transform: uppercase;
   clip-path: polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));
   transition: background .2s;
+  width: 10rem;
+  text-align: center;
 }
-#btn-print { bottom: 1.5rem; right: 1.5rem; }
-#btn-theme { bottom: 1.5rem; right: 10.5rem; }
-#btn-print:hover, #btn-theme:hover { background: var(--acc2); color: #000 }
+#btn-toolbar button:hover,
+#btn-print:hover, #btn-theme:hover, #btn-github:hover { background: var(--acc2); color: #000 }
 
 /* screen fade-in */
 @media screen {
@@ -955,7 +976,7 @@ body.light-mode .fname { color: #0f172a }
     padding: .65rem 1.75rem;
   }
 
-  #btn-print, #btn-theme, #locale-switch, .scan { display: none !important }
+  #btn-toolbar, #btn-print, #btn-theme, #btn-github, #locale-switch, .scan, .no-print { display: none !important }
   .bavail-dot { display: none }
 
   /* Hard-stop all animations so bars render at full width */
