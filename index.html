@@ -42,6 +42,10 @@
       </div>
     </div>
 
+    <div class="repo-link no-print">
+      <a href="https://github.com/txitxo0/folio-cv" target="_blank" rel="noopener">Original repo</a>
+    </div>
+
     <div class="corner-bl"></div>
     <div class="scan"></div>
   </header>
@@ -157,9 +161,11 @@
 
 </div><!-- #page-formal -->
 </div><!-- #shell-formal -->
-
-<button id="btn-theme" onclick="toggleTheme()">☀ Light Mode</button>
-<button id="btn-print" onclick="window.print()">⎙ Export PDF</button>
+<div id="btn-toolbar">
+    <button id="btn-theme" onclick="toggleTheme()">☀ Light Mode</button>
+  <button id="btn-github" type="button" onclick="window.open('https://github.com/txitxo0/folio-cv', '_blank', 'noopener')" aria-label="GitHub repository" title="GitHub repository">GitHub</button>
+  <button id="btn-print" onclick="window.print()">⎙ Export PDF</button>
+</div>
 
 <!-- ══════════════════════════════════════════════════════════
      RADAR SVG GENERATOR
