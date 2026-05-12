@@ -5,6 +5,14 @@
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 	"remoteUser": "vscode",
 	
+	"containerEnv": {
+        "GIT_EDITOR": "code --wait"
+    },
+	
+	"mounts": [
+        "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+    ],
+	
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -13,7 +21,11 @@
 				"ms-python.autopep8",
 				"ms-python.mypy-type-checker",
 				"oderwat.indent-rainbow"
-			]
+			],
+			"settings": {
+                "git.useEditorAsCommitInput": true,
+                "python.defaultInterpreterPath": "/workspace/.venv/bin/python"
+            }
 		}
 	},
 	"postCreateCommand": "python -m venv .venv && .venv/bin/pip install --upgrade pip && .venv/bin/pip install -r requirements.txt"
