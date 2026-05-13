@@ -172,18 +172,6 @@ body.light-mode .hname { color: #0f172a }
   align-items: flex-end; gap: .4rem;
   font-size: .57rem;
 }
-.repo-link {
-  margin-top: .8rem;
-  font-size: .75rem;
-  color: var(--txt2);
-}
-.repo-link a {
-  color: var(--acc);
-  text-decoration: none;
-}
-.repo-link a:hover {
-  color: var(--acc2);
-}
 .bavail {
   display: flex; align-items: center; gap: .35rem;
   color: var(--green);
